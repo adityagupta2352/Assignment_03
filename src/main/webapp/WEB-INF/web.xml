@@ -25,4 +25,34 @@
     <servlet-name>LoginCtl</servlet-name>
     <url-pattern>/LoginCtl</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddCtl</display-name>
+    <servlet-name>AddCtl</servlet-name>
+    <servlet-class>ctl.AddCtl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddCtl</servlet-name>
+    <url-pattern>/AddCtl</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteCtl</display-name>
+    <servlet-name>DeleteCtl</servlet-name>
+    <servlet-class>ctl.DeleteCtl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteCtl</servlet-name>
+    <url-pattern>/DeleteCtl</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateCtl</display-name>
+    <servlet-name>UpdateCtl</servlet-name>
+    <servlet-class>ctl.UpdateCtl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateCtl</servlet-name>
+    <url-pattern>/UpdateCtl</url-pattern>
+  </servlet-mapping>
 </web-app>

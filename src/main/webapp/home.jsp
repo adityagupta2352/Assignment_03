@@ -56,6 +56,10 @@
 				%>
 			</tbody>
 		</table>
+		
+		<button type="submit" name="addData" value="addition"><a href="add.jsp">Add Employee</a></button>
+		<button type="submit" name="deleteData" value="deletion"><a href="delete.jsp">Delete Employee</a></button>
+		<button type="submit" name="deleteData" value="updation"><a href="update.jsp">Update Employee</a></button>
 	</div>
 
 	<%
@@ -96,7 +100,6 @@
 			</tbody>
 		</table>
 	</div>
-
 	<%
 	}
 	%>
