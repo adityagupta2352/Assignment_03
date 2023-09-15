@@ -61,9 +61,9 @@ public class AddCtl extends HttpServlet {
 		Employee emp;
 
 		emp = es.addDetails(empIdNew, firstName, lastName, salaryNew, userName, passWord, isAdminNew);
-		// rd = request.getRequestDispatcher("home.jsp");
-		// rd.forward(request, response);
 		response.sendRedirect("home.jsp");
+		//rd = request.getRequestDispatcher("home.jsp");
+		//rd.forward(request, response);
 	}
 
 }

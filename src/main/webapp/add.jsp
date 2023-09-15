@@ -21,6 +21,9 @@
 	<%!int lastEmpId = 0;%>
 
 	<%
+	response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+    response.setHeader("Pragma", "no-cache");
+    response.setDateHeader("Expires", 0);
 	Employee e = (Employee) session.getAttribute("emp");
 	if (e == null) {
 		response.sendRedirect("login.jsp");

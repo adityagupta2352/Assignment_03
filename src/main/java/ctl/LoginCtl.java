@@ -43,11 +43,12 @@ public class LoginCtl extends HttpServlet {
 			if (emp != null) {
 				HttpSession session = request.getSession(true);
 				session.setAttribute("emp", emp);
+				//rd = request.getRequestDispatcher("home.jsp");
+				//rd.forward(request, response);
 				response.sendRedirect("home.jsp");
 			} else {
 				request.setAttribute("msg", "Invalid Credentials");
-				rd = request.getRequestDispatcher("login.jsp");
-				rd.forward(request, response);
+				response.sendRedirect("login.jsp");
 			}
 		}
 

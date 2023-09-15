@@ -18,11 +18,21 @@
 </head>
 <body>
 	<%
-	try {
-		// Get the employee ID from the request parameter sent from the home page
-		int empId = Integer.parseInt(request.getParameter("empId"));
-		EmployeeService es = new EmployeeService();
-		Employee emp = es.getEmployeeById(empId);
+	response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+	response.setHeader("Pragma", "no-cache");
+	response.setDateHeader("Expires", 0);
+
+	Employee e = (Employee) session.getAttribute("emp");
+	if (e == null) {
+		response.sendRedirect("login.jsp");
+	}
+
+	// Get the employee ID from the request parameter sent from the home page
+	int empId = Integer.parseInt(request.getParameter("empId"));
+	EmployeeService es = new EmployeeService();
+	Employee emp = es.getEmployeeById(empId);
+
+	if (emp != null) {
 	%>
 
 	<div class="container">
@@ -89,9 +99,8 @@
 		</form>
 	</div>
 	<%
-	} catch (Exception e) {
+	} else {
 	response.sendRedirect("login.jsp");
-	e.printStackTrace();
 	}
 	%>
 

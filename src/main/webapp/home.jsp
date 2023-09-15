@@ -115,7 +115,7 @@
 					<td><%=emp.getSalary()%></td>
 					<td><%=emp.isAdmin()%></td>
 					<td><button type="submit" name="updateData" value="updation">
-							<a href="update.jsp?empId=<%=emp.getEmpId()%>">Update
+							<a href="normalUpdate.jsp?empId=<%=emp.getEmpId()%>">Update
 								Employee</a>
 						</button></td>
 				</tr>
