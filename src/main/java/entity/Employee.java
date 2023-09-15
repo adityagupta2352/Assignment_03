@@ -9,9 +9,9 @@ public class Employee {
 	private String password;
 	private boolean isAdmin;
 	private double salary;
-	
-	public Employee()
-	{}
+
+	public Employee() {
+	}
 
 	public Employee(int empId, String firstName, String lastName, String userName, String password, boolean isAdmin,
 			double salary) {
@@ -28,7 +28,7 @@ public class Employee {
 	public int getEmpId() {
 		return empId;
 	}
-	
+
 	public void setEmpId(int empId) {
 		this.empId = empId;
 	}

@@ -6,6 +6,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import service.EmployeeService;
 
 import java.io.IOException;
@@ -17,31 +18,34 @@ import entity.Employee;
  */
 public class AddCtl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    
+
 	EmployeeService es = new EmployeeService();
 	RequestDispatcher rd;
-	
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public AddCtl() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	public AddCtl() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		String empId = request.getParameter("empId");
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
@@ -49,16 +53,17 @@ public class AddCtl extends HttpServlet {
 		String userName = request.getParameter("userName");
 		String passWord = request.getParameter("password");
 		String isAdmin = request.getParameter("isAdmin");
-		
+
 		int empIdNew = Integer.parseInt(empId);
 		double salaryNew = Double.parseDouble(salary);
 		boolean isAdminNew = Boolean.parseBoolean(isAdmin);
-		
+
 		Employee emp;
-		
-		emp = es.addDetails(empIdNew , firstName , lastName , salaryNew , userName ,passWord , isAdminNew);
-		rd = request.getRequestDispatcher("home.jsp");
-		rd.forward(request, response);
+
+		emp = es.addDetails(empIdNew, firstName, lastName, salaryNew, userName, passWord, isAdminNew);
+		// rd = request.getRequestDispatcher("home.jsp");
+		// rd.forward(request, response);
+		response.sendRedirect("home.jsp");
 	}
 
 }

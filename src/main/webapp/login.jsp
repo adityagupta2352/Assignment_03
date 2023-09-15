@@ -3,17 +3,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+<style>
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
 
 * {
 	box-sizing: border-box;
 	margin: 0;
-	padding: 0;	
+	padding: 0;
 	font-family: Raleway, sans-serif;
 }
 
 body {
-	background: linear-gradient(90deg, #C7C5F4, #776BCC);		
+	background: linear-gradient(90deg, #C7C5F4, #776BCC);
 }
 
 .container {
@@ -23,21 +24,21 @@ body {
 	min-height: 100vh;
 }
 
-.screen {		
-	background: linear-gradient(90deg, #5D54A4, #7C78B8);		
-	position: relative;	
+.screen {
+	background: linear-gradient(90deg, #5D54A4, #7C78B8);
+	position: relative;
 	height: 600px;
-	width: 360px;	
+	width: 360px;
 	box-shadow: 0px 0px 24px #5C5696;
 }
 
 .screen__content {
 	z-index: 1;
-	position: relative;	
+	position: relative;
 	height: 100%;
 }
 
-.screen__background {		
+.screen__background {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -45,7 +46,7 @@ body {
 	bottom: 0;
 	z-index: 0;
 	-webkit-clip-path: inset(0 0 0 0);
-	clip-path: inset(0 0 0 0);	
+	clip-path: inset(0 0 0 0);
 }
 
 .screen__background__shape {
@@ -56,18 +57,18 @@ body {
 .screen__background__shape1 {
 	height: 520px;
 	width: 520px;
-	background: #FFF;	
+	background: #FFF;
 	top: -50px;
-	right: 120px;	
+	right: 120px;
 	border-radius: 0 72px 0 0;
 }
 
 .screen__background__shape2 {
 	height: 220px;
 	width: 220px;
-	background: #6C63AC;	
+	background: #6C63AC;
 	top: -172px;
-	right: 0;	
+	right: 0;
 	border-radius: 32px;
 }
 
@@ -76,16 +77,16 @@ body {
 	width: 190px;
 	background: linear-gradient(270deg, #5D54A4, #6A679E);
 	top: -24px;
-	right: 0;	
+	right: 0;
 	border-radius: 32px;
 }
 
 .screen__background__shape4 {
 	height: 400px;
 	width: 200px;
-	background: #7E7BB9;	
+	background: #7E7BB9;
 	top: 420px;
-	right: 50px;	
+	right: 50px;
 	border-radius: 60px;
 }
 
@@ -96,8 +97,8 @@ body {
 }
 
 .login__field {
-	padding: 20px 0px;	
-	position: relative;	
+	padding: 20px 0px;
+	position: relative;
 }
 
 .login__icon {
@@ -117,9 +118,7 @@ body {
 	transition: .2s;
 }
 
-.login__input:active,
-.login__input:focus,
-.login__input:hover {
+.login__input:active, .login__input:focus, .login__input:hover {
 	outline: none;
 	border-bottom-color: #6A679E;
 }
@@ -142,9 +141,7 @@ body {
 	transition: .2s;
 }
 
-.login__submit:active,
-.login__submit:focus,
-.login__submit:hover {
+.login__submit:active, .login__submit:focus, .login__submit:hover {
 	border-color: #6A679E;
 	outline: none;
 }
@@ -155,7 +152,7 @@ body {
 	color: #7875B5;
 }
 
-.social-login {	
+.social-login {
 	position: absolute;
 	height: 140px;
 	width: 160px;
@@ -174,13 +171,14 @@ body {
 .social-login__icon {
 	padding: 20px 10px;
 	color: #fff;
-	text-decoration: none;	
+	text-decoration: none;
 	text-shadow: 0px 0px 8px #7875B5;
 }
 
 .social-login__icon:hover {
-	transform: scale(1.5);	
-}</style>
+	transform: scale(1.5);
+}
+</style>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script
@@ -192,10 +190,8 @@ body {
 </head>
 <body>
 
-	<%!String msg;%>
 	<%
-	msg = (String) request.getAttribute("msg");
-
+	String msg = (String) request.getAttribute("msg");
 	if (msg != null) {
 	%>
 	<div>
@@ -207,36 +203,36 @@ body {
 
 
 	<div class="container">
-	<div class="screen">
-		<div class="screen__content">
-			<form class="login" action="LoginCtl" method="post">
-				<div class="login__field">
-					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" name="userName" placeholder="User name">
-				</div>
-				<div class="login__field">
-					<i class="login__icon fas fa-lock"></i>
-					<input type="password" class="login__input" placeholder="Password" name="password">
-				</div>
-				<button type="submit" class="btn btn-default" name="operation"
-				value="login">Login</button>			
-			</form>
-			<div class="social-login">
-				<h3>log in via</h3>
-				<div class="social-icons">
-					<a href="#" class="social-login__icon fab fa-instagram"></a>
-					<a href="#" class="social-login__icon fab fa-facebook"></a>
-					<a href="#" class="social-login__icon fab fa-twitter"></a>
+		<div class="screen">
+			<div class="screen__content">
+				<form class="login" action="LoginCtl" method="post">
+					<div class="login__field">
+						<i class="login__icon fas fa-user"></i> <input type="text"
+							class="login__input" name="userName" placeholder="User name">
+					</div>
+					<div class="login__field">
+						<i class="login__icon fas fa-lock"></i> <input type="password"
+							class="login__input" placeholder="Password" name="password">
+					</div>
+					<button type="submit" class="btn btn-default" name="operation"
+						value="login">Login</button>
+				</form>
+				<div class="social-login">
+					<h3>log in via</h3>
+					<div class="social-icons">
+						<a href="#" class="social-login__icon fab fa-instagram"></a> <a
+							href="#" class="social-login__icon fab fa-facebook"></a> <a
+							href="#" class="social-login__icon fab fa-twitter"></a>
+					</div>
 				</div>
 			</div>
+			<div class="screen__background">
+				<span class="screen__background__shape screen__background__shape4"></span>
+				<span class="screen__background__shape screen__background__shape3"></span>
+				<span class="screen__background__shape screen__background__shape2"></span>
+				<span class="screen__background__shape screen__background__shape1"></span>
+			</div>
 		</div>
-		<div class="screen__background">
-			<span class="screen__background__shape screen__background__shape4"></span>
-			<span class="screen__background__shape screen__background__shape3"></span>		
-			<span class="screen__background__shape screen__background__shape2"></span>
-			<span class="screen__background__shape screen__background__shape1"></span>
-		</div>		
 	</div>
-</div>
 </body>
 </html>

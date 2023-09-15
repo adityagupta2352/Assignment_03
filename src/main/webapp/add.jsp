@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="service.EmployeeService"%>
+<%@ page import="entity.Employee"%>
+<%@ page import="java.util.List"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,13 +18,29 @@
 </head>
 <body>
 
+	<%!int lastEmpId = 0;%>
+
+	<%
+	Employee e = (Employee) session.getAttribute("emp");
+	if (e == null) {
+		response.sendRedirect("login.jsp");
+	}
+
+	EmployeeService es = new EmployeeService();
+	List<Employee> empList = es.getEmployee();
+	Employee emp = empList.get(empList.size() - 1);
+	lastEmpId = emp.getEmpId();
+
+	if (emp != null) {
+	%>
+
 	<div class="container">
 		<h2>Add Employee Details</h2>
 		<form action="AddCtl" method="post">
 			<div class="form-group">
 				<label for="empId">Employee Id:</label> <input type="text"
-					class="form-control" id="empId" placeholder="Enter id" name="empId"
-					required>
+					class="form-control" id="empId" name="empId"
+					value="<%=lastEmpId + 1%>" readonly>
 			</div>
 			<div class="form-group">
 				<label for="firstName">First Name:</label> <input type="text"
@@ -60,6 +79,9 @@
 			</div>
 		</form>
 	</div>
+	<%
+	}
+	%>
 
 
 </body>

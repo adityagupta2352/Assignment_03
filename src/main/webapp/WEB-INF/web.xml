@@ -55,4 +55,14 @@
     <servlet-name>UpdateCtl</servlet-name>
     <url-pattern>/UpdateCtl</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BackCtl</display-name>
+    <servlet-name>BackCtl</servlet-name>
+    <servlet-class>ctl.BackCtl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BackCtl</servlet-name>
+    <url-pattern>/BackCtl</url-pattern>
+  </servlet-mapping>
 </web-app>
