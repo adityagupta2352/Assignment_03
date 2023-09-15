@@ -105,6 +105,7 @@
 					<th>Last Name</th>
 					<th>Salary</th>
 					<th>Is Admin</th>
+					<th>Updation</th>
 				</tr>
 			</thead>
 			<tbody>
